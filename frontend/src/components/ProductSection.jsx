@@ -4,63 +4,63 @@ const products = [
  {
   id: 1,
   name: "Tractor Mounted Reaper Binder",
-  image: "/products/img1.avif",
+  image: "products/img1.avif",
   shortDesc:
     "Efficient tractor-mounted reaper binder for smooth harvesting with reduced labor and improved productivity.",
 },
  {
   id: 2,
   name: "Agricultural Thresher Machine",
-  image: "/products/img2.avif",
+  image: "products/img2.avif",
   shortDesc:
     "Reliable thresher machine designed for efficient grain separation and consistent post-harvest performance.",
 },
  {
   id: 3,
   name: "Seed & Grain Cleaning Machine",
-  image: "/products/img3.avif",
+  image: "products/img3.avif",
   shortDesc:
     "Effective machine for cleaning seeds and grains, ensuring better quality and market-ready output.",
 },
   {
   id: 4,
   name: "Tractor Mounted Cultivator",
-  image: "/products/img4.avif",
+  image: "products/img4.avif",
   shortDesc:
     "Heavy-duty cultivator for efficient soil preparation and improved field readiness before sowing.",
 },
 {
   id: 5,
   name: "Agricultural Seed Drill Machine",
-  image: "/products/img5.avif",
+  image: "products/img5.avif",
   shortDesc:
     "Precision seed drill machine for uniform sowing, better spacing, and improved crop yield.",
 },
 {
   id: 6,
   name: "Tractor Trolley / Farm Trailer",
-  image: "/products/img6.avif",
+  image: "products/img6.avif",
   shortDesc:
     "Durable tractor trolley for safe transportation of farm produce and agricultural materials.",
 },
 {
   id: 7,
   name: "Rotavator / Rotary Tiller",
-  image: "/products/img7.avif",
+  image: "products/img7.avif",
   shortDesc:
     "Efficient rotavator for soil mixing, residue management, and quick seedbed preparation.",
 },
 {
   id: 8,
   name: "Tractor Mounted Disc Harrow",
-  image: "/products/img8.avif",
+  image: "products/img8.avif",
   shortDesc:
     "Robust disc harrow for breaking hard soil and improving field conditions for cultivation.",
 },
 {
   id: 9,
   name: "Post Hole Digger / Auger Machine",
-  image: "/products/img9.avif",
+  image: "products/img9.avif",
   shortDesc:
     "Efficient auger machine for drilling uniform holes for fencing and plantation work.",
 },

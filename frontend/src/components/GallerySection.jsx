@@ -3,32 +3,32 @@ import { motion } from "framer-motion";
 const galleryImages = [
   {
     id: 1,
-    src: "/gallery/img1.avif",
+    src: "gallery/img1.avif",
     alt: "Agricultural machinery available at Chambal Agro Industries",
   },
   {
     id: 2,
-    src: "/gallery/img2.avif",
+    src: "gallery/img2.avif",
     alt: "Reaper binder machine dealer in Kota",
   },
   {
     id: 3,
-    src: "/gallery/img3.avif",
+    src: "gallery/img3.avif",
     alt: "Thresher machine stock at Chambal Agro Industries",
   },
   {
     id: 4,
-    src: "/gallery/img4.avif",
+    src: "gallery/img4.avif",
     alt: "Dealer yard with agricultural machines",
   },
   {
     id: 5,
-    src: "/gallery/img5.avif",
+    src: "gallery/img5.avif",
     alt: "Agricultural machine delivery to customer",
   },
   {
     id: 6,
-    src: "/gallery/img6.avif",
+    src: "gallery/img6.avif",
     alt: "Shakti Kissan agricultural machinery dealer",
   },
 ];
