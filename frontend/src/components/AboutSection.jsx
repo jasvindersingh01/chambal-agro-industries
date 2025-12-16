@@ -9,7 +9,6 @@ export default function AboutSection() {
     >
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-        {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -53,7 +52,6 @@ export default function AboutSection() {
             requirements.
           </p>
 
-          {/* Highlights */}
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               {
@@ -110,7 +108,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="absolute mt-2 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg hidden md:block"
+            className="absolute mt-2 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg"
           >
             <p className="text-sm uppercase tracking-wide">
               Since 2011

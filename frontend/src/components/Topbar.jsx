@@ -21,6 +21,7 @@ export default function Topbar() {
   return (
     <div
       className={`
+        hidden md:flex
         fixed top-0 left-0 w-full z-[60]
         bg-green-800 text-white text-sm
         transition-all duration-300

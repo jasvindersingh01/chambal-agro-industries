@@ -2,63 +2,66 @@ import heroimg from "../assets/heroimg.jpg";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-    return (
-        <section
-            id="home"
-            className="relative min-h-[90vh] flex items-center bg-gray-900 text-white"
+  return (
+    <section
+      id="home"
+      className="relative min-h-[75vh] md:min-h-[90vh] flex items-center text-white"
+    >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroimg})` }}
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 md:pt-28">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
         >
-            <div
-                className="absolute inset-0 bg-cover object-center"
-                style={{ backgroundImage: `url(${heroimg})` }}
-            />
+          Chambal Agro Industries
+        </motion.h1>
 
-            <div className="absolute inset-0 bg-black/60" />
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="mt-4 text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl"
+        >
+          Trusted Dealer & Supplier of Agricultural Machinery in Kota, Rajasthan.
+          Providing reliable agro equipment from reputed brands since 2011.
+        </motion.p>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28">
-                <motion.h1
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl font-bold leading-tight"
-                >
-                    Chambal Agro Industries
-                </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="mt-6 sm:mt-8 flex flex-wrap gap-4"
+        >
+          <motion.a
+            href="#products"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-md font-semibold transition"
+          >
+            View Machines
+          </motion.a>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl"
-                >
-                    Trusted Dealer & Supplier of Agricultural Machinery in Kota, Rajasthan.
-                    Providing reliable agro equipment from reputed brands since 2011.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                    className="mt-8 flex flex-wrap gap-4"
-                >
-                    <motion.a
-                        href="#products"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-green-700 hover:bg-green-800 px-6 py-3 rounded-md font-semibold transition"
-                    >
-                        View Machines
-                    </motion.a>
-
-                    <motion.a
-                        href="#contact"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="border border-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition"
-                    >
-                        Get Quote
-                    </motion.a>
-                </motion.div>
-            </div>
-        </section>
-    );
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="border border-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black transition"
+          >
+            Get Quote
+          </motion.a>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
