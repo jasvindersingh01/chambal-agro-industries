@@ -1,0 +1,80 @@
+import { useEffect, useState } from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa";
+
+export default function Topbar() {
+  const [hideTopbar, setHideTopbar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setHideTopbar(true);
+      else setHideTopbar(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div
+      className={`
+        fixed top-0 left-0 w-full z-[60]
+        bg-green-800 text-white text-sm
+        transition-all duration-300
+        ${hideTopbar ? "-translate-y-full" : "translate-y-0"}
+      `}
+    >
+      <div className="max-w-7xl mx-auto px-4 py-1 flex flex-col md:flex-row items-center justify-between gap-2">
+
+        <div className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
+          <p>📍 Indraprastha Industrial Area, Kota, Rajasthan</p>
+          <span className="hidden md:block">|</span>
+          <a href="tel:9829037317" className="hover:underline">
+            📞 +91 9829037317
+          </a>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <a
+            href="mailto:info@chambalagroindustries.com"
+            className="hover:underline hidden md:block"
+          >
+            ✉️ info@chambalagroindustries.com
+          </a>
+
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.facebook.com/ChambalAgroIndustries/"
+              aria-label="Facebook"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaFacebookF size={14} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/chambal_agro_industries/"
+              aria-label="Instagram"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaInstagram size={14} />
+            </a>
+
+            <a
+              href="https://wa.me/919829037317"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+            >
+              <FaWhatsapp size={14} />
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
