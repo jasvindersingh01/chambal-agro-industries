@@ -1,40 +1,48 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import { FaUserCircle } from "react-icons/fa";
 
 const testimonials = [
   {
     name: "Nitesh Baragu",
-    review:
-      "Best agriculture impliments.",
+    review: "Best agriculture implements.",
     rating: 5,
   },
   {
     name: "Arun Kumar",
-    review:
-      "Best reaper cum binder machine and service.",
+    review: "Best reaper cum binder machine and service.",
     rating: 5,
   },
   {
     name: "Raj Singh Rajawat",
     review:
-      "Very good place and well behaviour of owner Mr.Piyush ji khandelwal.",
+      "Very good place and well behaviour of owner Mr. Piyush Ji Khandelwal.",
     rating: 5,
   },
   {
     name: "Tejraj Singh",
-    review:
-      "Best rotavator performance in field. I m satisfied.",
+    review: "Best rotavator performance in field. I am satisfied.",
+    rating: 5,
+  },
+  {
+    name: "Pannalal Dhakar",
+    review: "Best spary machine for agriculture",
+    rating: 5,
+  },
+  {
+    name: "Rahul Rathore",
+    review: "Dealer binder best product",
     rating: 5,
   },
 ];
 
 export default function Testimonial() {
   return (
-    <section className="py-20 bg-gray-100 px-6 scroll-mt-20">
+    <section className="py-20 bg-gray-50 px-6 scroll-mt-20">
+      {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,41 +58,55 @@ export default function Testimonial() {
         </p>
       </motion.div>
 
+      {/* Slider */}
       <Swiper
-        spaceBetween={30}
+        spaceBetween={24}
         slidesPerView={1}
+        loop={true}
+        grabCursor={true}
+        autoplay={{
+          delay: 4500,
+          disableOnInteraction: false,
+        }}
         pagination={{ clickable: true }}
         breakpoints={{
+          640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         className="max-w-7xl mx-auto"
       >
         {testimonials.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="h-auto">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition min-h-[300px]"
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="
+                bg-white rounded-xl p-6
+                shadow-md hover:shadow-lg
+                transition
+                h-full flex flex-col items-center text-center
+              "
             >
-             
-              <div className="flex justify-center">
-                <FaUserCircle className="text-gray-400 text-6xl" />
-              </div>
+              {/* Avatar */}
+              <FaUserCircle className="text-gray-400 text-5xl mb-4" />
 
-              <h3 className="text-lg font-semibold text-center mt-4 text-green-700">
+              {/* Name */}
+              <h3 className="text-base font-semibold text-green-700">
                 {item.name}
               </h3>
 
-              <div className="flex justify-center text-yellow-400 text-xl my-2">
+              {/* Rating */}
+              <div className="flex justify-center text-yellow-400 text-lg my-2">
                 {"★".repeat(item.rating)}
                 {"☆".repeat(5 - item.rating)}
               </div>
 
-              <p className="text-gray-600 mt-3 text-center leading-relaxed text-sm">
+              {/* Review */}
+              <p className="text-gray-600 text-sm leading-relaxed mt-2 mb-">
                 “{item.review}”
               </p>
             </motion.div>
@@ -92,9 +114,10 @@ export default function Testimonial() {
         ))}
       </Swiper>
 
+      {/* CTA Buttons */}
       <div className="text-center mt-12 flex flex-col md:flex-row items-center justify-center gap-6">
         <a
-          href="https://www.google.com/search?sca_esv=99bb3a357913b4a3&sxsrf=AE3TifPUTUsJEMwATCNOy70hsxzgnWrGvQ:1765887222287&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E8qLYGDu92MX1_gPSOarDCmeqAiKrg49DtezJsXMqMLMJVFC-EH5iDqcphV2Tj08CQgiWZo6eetPi507CnGnJmSY9vWLG6d5TFJCTGRBeUP_zzHymw%3D%3D&q=Chambal+Agro+Industries+,+Kota+Reviews&sa=X&ved=2ahUKEwjh9-PEisKRAxUdTWwGHaebOkUQ0bkNegQIIhAD&biw=1536&bih=738&dpr=1.25"
+          href="https://www.google.com/search?q=Chambal+Agro+Industries+%2C+Kota+Reviews&oq=chambal+&gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg5MgcIARAAGIAEMgYIAhBFGDsyDAgDEAAYFBiHAhiABDISCAQQLhgUGK8BGMcBGIcCGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTc1M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x396f8508dc040f63:0x5b030eb1ba060df3,1,,,,"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-6 py-3 bg-green-700 text-white rounded-lg font-medium shadow hover:bg-green-600 transition"
@@ -103,7 +126,7 @@ export default function Testimonial() {
         </a>
 
         <a
-          href="https://www.google.com/search?sca_esv=99bb3a357913b4a3&sxsrf=AE3TifPUTUsJEMwATCNOy70hsxzgnWrGvQ:1765887222287&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E8qLYGDu92MX1_gPSOarDCmeqAiKrg49DtezJsXMqMLMJVFC-EH5iDqcphV2Tj08CQgiWZo6eetPi507CnGnJmSY9vWLG6d5TFJCTGRBeUP_zzHymw%3D%3D&q=Chambal+Agro+Industries+,+Kota+Reviews&sa=X&ved=2ahUKEwjh9-PEisKRAxUdTWwGHaebOkUQ0bkNegQIIhAD&biw=1536&bih=738&dpr=1.25"
+          href="https://www.google.com/search?q=Chambal+Agro+Industries+%2C+Kota+Reviews&oq=chambal+&gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg5MgcIARAAGIAEMgYIAhBFGDsyDAgDEAAYFBiHAhiABDISCAQQLhgUGK8BGMcBGIcCGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEINTc1M2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x396f8508dc040f63:0x5b030eb1ba060df3,3,,,,"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 bg-white text-green-700 border-2 border-green-700 rounded-lg font-medium shadow hover:bg-green-50 transition"

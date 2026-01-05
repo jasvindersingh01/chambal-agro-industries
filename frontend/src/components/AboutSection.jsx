@@ -7,13 +7,15 @@ export default function AboutSection() {
       id="about"
       className="py-20 bg-gray-50 scroll-mt-20"
     >
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
 
+        {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="order-2 md:order-1"
         >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -25,34 +27,31 @@ export default function AboutSection() {
             About Chambal Agro Industries
           </motion.h2>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Chambal Agro Industries is a trusted and well-established dealer and
-            supplier of agricultural and agro-processing machinery, serving
-            farmers and agro-based businesses across Kota and nearby regions of
-            Rajasthan. Since our establishment in 2011, we have been committed
-            to providing reliable, high-quality farm machinery that supports
-            modern and efficient agricultural practices.
-          </p>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Chambal Agro Industries is a trusted and well-established dealer and
+              supplier of agricultural and agro-processing machinery, serving
+              farmers and agro-based businesses across Kota and nearby regions of
+              Rajasthan. Since our establishment in 2011, we have been committed
+              to providing reliable, high-quality farm machinery.
+            </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
-            We specialize in supplying a wide range of agricultural equipment,
-            including threshers, reaper binders, grain and seed-related machines,
-            and other agro machinery sourced from reputed and recognized brands
-            in the industry. Our focus has always been on delivering machines
-            that offer durability, performance, and value for money.
-          </p>
+            <p>
+              We specialize in supplying a wide range of agricultural equipment,
+              including threshers, reaper binders, grain and seed-related
+              machines, and other agro machinery sourced from reputed brands.
+            </p>
 
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Located in the Indraprastha Industrial Area, Kota, Chambal Agro
-            Industries has built strong relationships with farmers, traders, and
-            agro businesses by maintaining transparency, fair pricing, and
-            dependable service support. We understand the real needs of the
-            agricultural sector and guide our customers in selecting the right
-            equipment based on their usage, land size, and operational
-            requirements.
-          </p>
+            <p>
+              Located in the Indraprastha Industrial Area, Kota, we have built
+              strong relationships through transparency, fair pricing, and
+              dependable service support, helping customers choose the right
+              equipment for their needs.
+            </p>
+          </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          {/* HIGHLIGHT CARDS */}
+          <div className="grid sm:grid-cols-2 gap-5 mt-10">
             {[
               {
                 title: "Trusted Dealer Network",
@@ -76,13 +75,18 @@ export default function AboutSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-white p-4 rounded-lg shadow-sm"
+                transition={{ delay: i * 0.12 }}
+                className="
+                  bg-white p-5 rounded-xl
+                  shadow-sm hover:shadow-md
+                  border border-gray-100
+                  transition
+                "
               >
                 <h4 className="font-semibold text-green-700">
                   {item.title}
                 </h4>
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-gray-600 mt-2">
                   {item.desc}
                 </p>
               </motion.div>
@@ -90,6 +94,7 @@ export default function AboutSection() {
           </div>
         </motion.div>
 
+        {/* RIGHT IMAGE */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -100,20 +105,27 @@ export default function AboutSection() {
           <img
             src={aboutImg}
             alt="Chambal Agro Industries Machinery"
-            className="rounded-xl shadow-lg w-full object-cover"
+            className="rounded-2xl shadow-xl w-full object-cover"
           />
 
+          {/* BADGE – FIXED POSITION */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="absolute mt-2 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg"
+            className="
+              absolute bottom-4 right-4
+              bg-green-700 text-white
+              px-5 py-3 rounded-xl
+              shadow-lg
+              text-center
+            "
           >
-            <p className="text-sm uppercase tracking-wide">
+            <p className="text-xs uppercase tracking-wide opacity-90">
               Since 2011
             </p>
-            <p className="text-md font-semibold">
+            <p className="text-sm font-semibold">
               Trusted Agro Machinery Dealer
             </p>
           </motion.div>

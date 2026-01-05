@@ -50,7 +50,7 @@ export default function Topbar() {
               aria-label="Facebook"
               className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
-              <FaFacebookF size={13} />
+              <FaFacebookF size={18} />
             </a>
 
             <a
@@ -58,7 +58,7 @@ export default function Topbar() {
               aria-label="Instagram"
               className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
-              <FaInstagram size={13} />
+              <FaInstagram size={18} />
             </a>
 
             <a
@@ -68,7 +68,7 @@ export default function Topbar() {
               aria-label="WhatsApp"
               className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 transition"
             >
-              <FaWhatsapp size={13} />
+              <FaWhatsapp size={18} />
             </a>
           </div>
         </div>

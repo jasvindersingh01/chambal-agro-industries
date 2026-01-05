@@ -8,7 +8,7 @@ export default function ContactSection() {
 
         <div>
           <h2 className="text-4xl font-bold mb-6">
-            Contact Chambal Agro Industries
+            Contact Us
           </h2>
 
           <p className="text-green-100 mb-8 leading-relaxed">

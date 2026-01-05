@@ -114,6 +114,18 @@ export default function Footer() {
 
       <div className="border-t border-gray-800 py-4 text-center text-sm text-gray-400">
         © {new Date().getFullYear()} Chambal Agro Industries. All Rights Reserved.
+          <span className="mx-2 hidden sm:inline">|</span>
+        <span className="block sm:inline mt-1 sm:mt-0">
+          Designed & Developed by{" "}
+          <a
+            href="https://rightadsdigital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-700 hover:text-green-500 font-semibold transition"
+          >
+            Right Ads
+          </a>
+        </span>
       </div>
     </footer>
   );

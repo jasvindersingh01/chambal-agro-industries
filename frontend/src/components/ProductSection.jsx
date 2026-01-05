@@ -111,7 +111,7 @@ export default function ProductsSection() {
                   alt={product.name}
                   whileHover={{ scale: 1.08 }}
                   transition={{ duration: 0.3 }}
-                  className="w-full h-56 object-contain"
+                  className="w-full h-56 object-cover"
                 />
               </div>
 
